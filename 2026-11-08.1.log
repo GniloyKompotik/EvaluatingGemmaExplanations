@@ -1,0 +1,587 @@
+[2026-11-08 14:29:01][INFO] Server stopped.
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER] Success! HTTP server listening on port 1235
+[2026-11-08 14:29:02][INFO] 
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER] Supported endpoints:
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]   LM Studio API
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  GET  http://localhost:1235/api/v1/models
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/api/v1/chat
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/api/v1/models/load
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/api/v1/models/download
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  GET http://localhost:1235/api/v1/models/download/status:job_id
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]   OpenAI-compatible
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  GET  http://localhost:1235/v1/models
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/v1/responses
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/v1/chat/completions
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/v1/completions
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER]    ->  POST http://localhost:1235/v1/embeddings
+[2026-11-08 14:29:02][INFO] 
+[2026-11-08 14:29:02][INFO][LM STUDIO SERVER] Logs are saved into C:\Users\Diyar\.lmstudio\apps\bionic\server-logs
+[2026-11-08 14:29:02][INFO] Server started.
+[2026-11-08 14:29:02][INFO] Just-in-time model loading active.
+[2026-11-08 14:29:13][DEBUG] 0.00.023.002 I srv  llama_server: initializing ...
+[2026-11-08 14:29:13][DEBUG] 0.00.050.299 I srv  init_listene: The UI is disabled
+0.00.050.306 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+[2026-11-08 14:29:13][DEBUG] 0.00.070.671 I srv    load_model: loading model 'C:\Users\Diyar\.lmstudio\models\lmstudio-community\gemma-4-12B-it-QAT-GGUF\gemma-4-12B-it-QAT-Q4_0.gguf'
+[2026-11-08 14:29:14][DEBUG] 0.00.968.382 W load: control-looking token:     50 '<|tool_response>' was not control-type; this is probably a bug in the model. its type will be overridden
+[2026-11-08 14:29:14][DEBUG] 0.00.968.460 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+[2026-11-08 14:29:14][DEBUG] 0.01.021.766 W load: '</s>' is a normal token here, removing it from EOG list
+[2026-11-08 14:29:22][DEBUG] 0.08.913.932 I cmn          init: llama threadpool init, n_threads = 4
+[2026-11-08 14:29:23][DEBUG] 0.09.901.961 W init_audio: audio input is in experimental stage and may have reduced quality:
+    https://github.com/ggml-org/llama.cpp/discussions/13759
+0.09.901.969 I srv    load_model: loaded multimodal model, 'C:/Users/Diyar/.lmstudio/models/lmstudio-community/gemma-4-12B-it-QAT-GGUF/mmproj-gemma-4-12B-it-QAT-BF16.gguf'
+[2026-11-08 14:29:23][DEBUG] 0.09.986.454 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 262144, kv_unified = 'true'
+[2026-11-08 14:29:23][DEBUG] 0.09.996.833 I srv  server_run_i: model loaded
+0.09.996.843 I srv  server_on_li: listening on http://127.0.0.1:51979
+[2026-11-08 14:29:24][DEBUG] 0.10.805.827 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+[2026-11-08 14:29:24][DEBUG] 0.10.806.883 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+[2026-11-08 14:29:27][DEBUG] 0.13.958.942 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   5765, progress = 1.00, t =   3.15 s / 1829.45 tokens per second
+[2026-11-08 14:29:30][DEBUG] 0.17.168.380 I slot print_timing: id  0 | task 0 | n_gen =    127, tg =  41.85 t/s, tg_3s =  42.18 t/s
+[2026-11-08 14:29:32][DEBUG] 0.18.312.656 I slot print_timing: id  0 | task 0 | prompt eval time =    3349.96 ms /  5769 tokens (    0.58 ms per token,  1722.11 tokens per second)
+0.18.312.662 I slot print_timing: id  0 | task 0 |        eval time =    4154.71 ms /   176 tokens (   23.74 ms per token,    42.12 tokens per second)
+0.18.312.663 I slot print_timing: id  0 | task 0 |       total time =    7504.67 ms /  5945 tokens
+0.18.312.664 I slot print_timing: id  0 | task 0 |    graphs reused =        174
+0.18.312.665 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+[2026-11-08 14:29:32][DEBUG] 0.18.313.104 I slot      release: id  0 | task 0 | stop processing: n_tokens = 5944, truncated = 0
+[2026-11-08 14:29:51][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert Software Engineering teaching assistant. Explain clearly and provide correct, runnable Python code."
+    },
+    {
+      "role": "user",
+      "content": "Write a Python function `is_palindrome(s: str) -> ... <Truncated in logs> ...a string is a palindrome ignoring case and spaces."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:29:51][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:29:51][DEBUG] 0.37.478.990 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.141 (> 0.100 thold), f_keep = 0.002
+[2026-11-08 14:29:51][DEBUG] 0.37.949.314 I slot launch_slot_: id  0 | task 183 | processing task, is_child = 0
+[2026-11-08 14:29:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:29:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 42.2%
+[2026-11-08 14:29:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 93.8%
+[2026-11-08 14:29:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:29:54][DEBUG] 0.41.179.472 I slot print_timing: id  0 | task 183 | n_gen =    150, tg =  49.60 t/s, tg_3s =  49.93 t/s
+[2026-11-08 14:29:57][DEBUG] 0.44.184.523 I slot print_timing: id  0 | task 183 | n_gen =    302, tg =  50.09 t/s, tg_3s =  50.58 t/s
+[2026-11-08 14:30:00][DEBUG] 0.47.200.749 I slot print_timing: id  0 | task 183 | n_gen =    445, tg =  49.19 t/s, tg_3s =  47.41 t/s
+[2026-11-08 14:30:03][DEBUG] 0.50.210.327 I slot print_timing: id  0 | task 183 | n_gen =    593, tg =  49.19 t/s, tg_3s =  49.18 t/s
+[2026-11-08 14:30:06][DEBUG] 0.53.211.353 I slot print_timing: id  0 | task 183 | n_gen =    732, tg =  48.62 t/s, tg_3s =  46.32 t/s
+[2026-11-08 14:30:09][DEBUG] 0.56.230.810 I slot print_timing: id  0 | task 183 | n_gen =    877, tg =  48.52 t/s, tg_3s =  48.02 t/s
+[2026-11-08 14:30:13][DEBUG] 0.59.246.043 I slot print_timing: id  0 | task 183 | n_gen =   1016, tg =  48.17 t/s, tg_3s =  46.10 t/s
+[2026-11-08 14:30:13][DEBUG] 0.59.406.876 I slot print_timing: id  0 | task 183 | prompt eval time =     225.61 ms /    64 tokens (    3.53 ms per token,   283.68 tokens per second)
+0.59.406.882 I slot print_timing: id  0 | task 183 |        eval time =   21231.44 ms /  1024 tokens (   20.75 ms per token,    48.18 tokens per second)
+0.59.406.884 I slot print_timing: id  0 | task 183 |       total time =   21457.05 ms /  1088 tokens
+0.59.406.885 I slot print_timing: id  0 | task 183 |    graphs reused =       1192
+0.59.406.886 I slot print_timing: id  0 | task 183 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.59.406.904 I slot      release: id  0 | task 183 | stop processing: n_tokens = 1087, truncated = 0
+[2026-11-08 14:30:13][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:30:13][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-7t0x0qcqbobfs808y2yy5g",
+  "object": "chat.completion",
+  "created": 1794130191,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! As your Software Engineering TA, I'll help you break this down. \n\nTo solve this problem efficiently, we need to follow a two-step process: **Preprocessing** (cleaning the string) and **Comparison** (checking if it reads the same backward).\n\nHere is the production-ready Python code:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Checks if a string is a palindrome, ignoring case and spaces.\n    \n    Args:\n        s (str): The string to check.\n        \n    Returns:\n        bool: True if palindrome, False otherwise.\n    \"\"\"\n    # Step 1: Preprocessing\n    # We iterate through the string, keep only non-space characters,\n    # and convert them to lowercase.\n    clean_s = \"\".join(char.lower() for char in s if char != \" \")\n    \n    # Step 2: Comparison\n    # [::-1] is the Pythonic way to reverse a string using slicing.\n    return clean_s == clean_s[::-1]\n\n# --- Test Cases ---\nif __name__ == \"__main__\":\n    test_cases = [\n        (\"Racecar\", True),\n        (\"nurses run\", True),\n        (\"hello\", False),\n        (\"A",
+        "reasoning_content": "The objective is to write a Python function `is_palindrome(s: str) -> bool` that determines if a string is a palindrome.\n    *   *Constraint 1:* Ignore case (e.g., \"Racecar\" should be true).\n    *   *Constraint 2:* Ignore spaces (e.g., \"nurses run\" should be true).\n    *   *Implicit Constraint:* Usually, for these types of problems, non-alphanumeric characters (punctuation) are also ignored, but the prompt specifically mentions \"case and spaces\". I should probably stick to the prompt's specific requirements but maybe mention how to handle punctuation if needed.\n\n    *   *Input:* A string `s`.\n    *   *Step 1: Preprocessing.*\n        *   Convert the string to lowercase.\n        *   Remove all spaces.\n    *   *Step 2: Comparison.*\n        *   Check if the processed string is equal to its reverse.\n    *   *Step 3: Return.*\n        *   Return `True` if equal, `False` otherwise.\n\n    *   *Approach A: Slicing (Pythonic).*\n        ```python\n        processed = \"\".join(char.lower() for char in s if char != \" \")\n        return processed == processed[::-1]\n        ```\n    *   *Approach B: Two Pointers (Memory Efficient).*\n        *   Use two pointers (left and right).\n        *   Skip spaces and normalize case on the fly.\n        *   Compare characters.\n\n    *   *Decision:* For a teaching context, the \"Pythonic\" slicing approach is usually the best first explanation because it's readable. I will also provide the \"Two Pointers\" approach as an advanced/efficient alternative.\n\n    *   *Code Block 1 (The Solution):*\n        ```python\n        def is_palindrome(s: str) -> bool:\n            # 1. Preprocess: remove spaces and convert to lowercase\n            # We use a generator expression inside join for efficiency\n            clean_s = \"\".join(char.lower() for char in s if char != \" \")\n\n            # 2. Check if the string is equal to its reverse\n            return clean_s == clean_s[::-1]\n        ```\n\n    *   *Explanation:*\n        *   Explain `char.lower()`.\n        *   Explain the list comprehension/generator expression.\n        *   Explain the slicing `[::-1]`.\n\n    *   *Test Cases:*\n        *   \"Racecar\" -> True\n        *   \"nurses run\" -> True\n        *   \"hello\" -> False\n        *   \"A man a plan a canal Panama\" (Wait, this has commas/punctuation. The prompt only said spaces. I should stick to spaces, but maybe add a note about `isalnum()` for a more robust solution).\n\n    *   *Refining the \"Robust\" version:*\n        If the user wants to handle punctuation too (which is common in LeetCode-style problems), I should mention `char.isalnum()`.\n\n    *   *Introduction:* Acknowledge the role (TA).\n    *   *The Code:* Provide the clean, runnable code.\n    *   *Complexity Analysis:* Time and Space complexity (important for Software Engineering).\n    *   *Alternative Approach:* Two-pointer method (O(1) extra space).",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 64,
+    "completion_tokens": 1024,
+    "total_tokens": 1088,
+    "completion_tokens_details": {
+      "reasoning_tokens": 735
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:30:15][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Вы преподаватель инженерии программного обеспечени... <Truncated in logs> ...ском языке и предоставляйте работающий код Python."
+    },
+    {
+      "role": "user",
+      "content": "Напишите функцию Python `is_palindrome(s: str) -> ... <Truncated in logs> ...и строка палиндромом, игнорируя регистр и пробелы."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:30:15][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:30:15][DEBUG] 1.01.474.613 I slot get_availabl: id  1 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+1.01.474.662 I slot launch_slot_: id  1 | task 1210 | processing task, is_child = 0
+[2026-11-08 14:30:15][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:30:15][INFO][google/gemma-4-12b-qat] Prompt processing progress: 42.7%
+[2026-11-08 14:30:15][INFO][google/gemma-4-12b-qat] Prompt processing progress: 95.1%
+[2026-11-08 14:30:15][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:30:18][DEBUG] 1.04.767.616 I slot print_timing: id  1 | task 1210 | n_gen =    145, tg =  47.82 t/s, tg_3s =  48.16 t/s
+[2026-11-08 14:30:21][DEBUG] 1.07.779.337 I slot print_timing: id  1 | task 1210 | n_gen =    294, tg =  48.65 t/s, tg_3s =  49.47 t/s
+[2026-11-08 14:30:24][DEBUG] 1.10.786.082 I slot print_timing: id  1 | task 1210 | n_gen =    438, tg =  48.40 t/s, tg_3s =  47.89 t/s
+[2026-11-08 14:30:27][DEBUG] 1.13.801.887 I slot print_timing: id  1 | task 1210 | n_gen =    577, tg =  47.82 t/s, tg_3s =  46.09 t/s
+[2026-11-08 14:30:30][DEBUG] 1.16.806.486 I slot print_timing: id  1 | task 1210 | n_gen =    721, tg =  47.84 t/s, tg_3s =  47.93 t/s
+[2026-11-08 14:30:33][DEBUG] 1.19.813.398 I slot print_timing: id  1 | task 1210 | n_gen =    872, tg =  48.24 t/s, tg_3s =  50.22 t/s
+[2026-11-08 14:30:36][DEBUG] 1.22.819.035 I slot print_timing: id  1 | task 1210 | n_gen =   1015, tg =  48.14 t/s, tg_3s =  47.58 t/s
+[2026-11-08 14:30:36][DEBUG] 1.23.027.124 I slot print_timing: id  1 | task 1210 | prompt eval time =     166.23 ms /    82 tokens (    2.03 ms per token,   493.29 tokens per second)
+1.23.027.130 I slot print_timing: id  1 | task 1210 |        eval time =   21270.53 ms /  1024 tokens (   20.79 ms per token,    48.09 tokens per second)
+1.23.027.131 I slot print_timing: id  1 | task 1210 |       total time =   21436.76 ms /  1106 tokens
+1.23.027.132 I slot print_timing: id  1 | task 1210 |    graphs reused =       2210
+1.23.027.133 I slot print_timing: id  1 | task 1210 |   graph reallocs =          0    /     0        (same size) / (changed size)
+1.23.027.158 I slot      release: id  1 | task 1210 | stop processing: n_tokens = 1105, truncated = 0
+[2026-11-08 14:30:36][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:30:36][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-wqirdt25dqjwugamclqwea",
+  "object": "chat.completion",
+  "created": 1794130215,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Здравствуйте, студенты. Сегодня мы разберем классическую задачу наstrings manipulation (манипуляцию строками) — проверку строки на палиндром.\n\n### Теоретическое обоснование\n\nПалиндром — это последовательность символов, которая читается одинаково в обоих направлениях. Чтобы решить эту задачу эффективно и корректно, нам необходимо выполнить три этапа:\n\n1.  **Нормализация данных**: Поскольку условие требует игнорировать регистр и пробелы, нам нужно привести строку к единому виду. Мы переведем все символы в нижний регистр и удалим пробелы.\n2.  **Инверсия**: Нам нужно сравнить исходную (нормализованную) строку с её зеркальным отражением.\n3.  **Сравнение**: Если нормализованная строка равна своей инверсии, функция возвращает `True`.\n\n### Реализация на Python\n\nНиже представлен чистый и эффективный код с комментариями.\n\n```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Проверяет, является ли строка палиндромом, \n    игнорируя реги",
+        "reasoning_content": "*   Role: Software Engineering Professor.\n    *   Task: Explain clearly in Russian and provide working Python code.\n    *   Specific Problem: Write a function `is_palindrome(s: str) -> bool` that checks if a string is a palindrome, ignoring case and spaces.\n\n    *   *Definition:* A palindrome is a word/phrase that reads the same forwards and backwards.\n    *   *Requirements:*\n        1.  Ignore case (e.g., \"Anna\" is a palindrome).\n        2.  Ignore spaces (e.g., \"A man a plan a canal Panama\" is a palindrome).\n    *   *Technical approach:*\n        1.  Pre-process the string: Remove spaces and convert to lowercase.\n        2.  Compare the processed string with its reverse.\n        3.  Return `True` or `False`.\n\n    *   *Step 1: Pre-processing.*\n        *   Use `.replace(\" \", \"\")` to remove spaces.\n        *   Use `.lower()` to normalize case.\n        *   *Refinement:* Should I also remove punctuation? The prompt only says \"spaces\" and \"case\", but in a real-world scenario, punctuation is usually ignored too. I'll stick to the prompt's specific requirements but mention punctuation as a \"pro-tip\".\n\n    *   *Step 2: Comparison.*\n        *   Slicing: `s == s[::-1]` is the most Pythonic way.\n        *   Two-pointer approach: `left` and `right` pointers moving towards the center. This is more \"engineering-heavy\" and efficient in terms of memory (no new string creation), but slicing is standard for Python. I'll provide the slicing method as the primary one and mention the two-pointer approach for academic depth.\n\n    *   *Introduction:* Set the persona. Acknowledge the task.\n    *   *Explanation:* Break down the logic into steps (Normalization, Comparison).\n    *   *Code:* Provide a clean, well-commented Python function.\n    *   *Complexity Analysis:* Time and Space complexity (crucial for a software engineering professor).\n    *   *Examples:* Show test cases.\n\n    *   *Greeting:* \"Здравствуйте, студенты.\" (Hello, students).\n    *   *Logic:*\n        1.  Нормализация (Normalization): `s.replace(\" \", \"\").lower()`.\n        2.  Сравнение (Comparison): `s == s[::-1]`.\n    *   *Code block:*\n        ```python\n        def is_palindrome(s: str) -> bool:\n            # Step 1: Clean the string\n            cleaned = s.replace(\" \", \"\").lower()\n            # Step 2: Check equality with reverse\n            return cleaned == cleaned[::-1]\n        ```\n    *   *Complexity:*\n        *   Time: $O(n)$ because we iterate through the string.\n        *   Space: $O(n)$ because we create a new string.\n\n    *   *Self-Correction during drafting:* The prompt says \"ignore spaces\". What if there are tabs or newlines? `s.replace(\" \", \"\")` only handles spaces. A more robust way is `\"\".join(s.split())`. I'll use `replace(\" \", \"\")` for simplicity as requested, but mention `split()` for robustness.\n\n    *   *Refining the \"Professor\" tone:* Use terms like \"алгоритмическая сложность\" (algorithmic complexity), \"нормализация данных\" (data normalization), and \"Pythonic way\".",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 82,
+    "completion_tokens": 1024,
+    "total_tokens": 1106,
+    "completion_tokens_details": {
+      "reasoning_tokens": 773
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:30:38][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Сіз бағдарламалық инженерия оқытушысысыз. Түсініктемені тек қазақ тілінде беріп, жұмыс істейтін Python кодын ұсыныңыз."
+    },
+    {
+      "role": "user",
+      "content": "Жолдың регистрі мен бос орындарды елемей, палиндро... <Truncated in logs> ...ndrome(s: str) -> bool` Python функциясын жазыңыз."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:30:38][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:30:38][DEBUG] 1.25.096.013 I slot get_availabl: id  2 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+1.25.096.061 I slot launch_slot_: id  2 | task 2237 | processing task, is_child = 0
+[2026-11-08 14:30:38][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:30:38][INFO][google/gemma-4-12b-qat] Prompt processing progress: 52.3%
+[2026-11-08 14:30:39][INFO][google/gemma-4-12b-qat] Prompt processing progress: 96.4%
+[2026-11-08 14:30:39][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:30:42][DEBUG] 1.28.327.190 I slot print_timing: id  2 | task 2237 | n_gen =    136, tg =  44.85 t/s, tg_3s =  45.18 t/s
+[2026-11-08 14:30:45][DEBUG] 1.31.332.473 I slot print_timing: id  2 | task 2237 | n_gen =    270, tg =  44.72 t/s, tg_3s =  44.59 t/s
+[2026-11-08 14:30:48][DEBUG] 1.34.342.447 I slot print_timing: id  2 | task 2237 | n_gen =    408, tg =  45.09 t/s, tg_3s =  45.85 t/s
+[2026-11-08 14:30:51][DEBUG] 1.37.351.264 I slot print_timing: id  2 | task 2237 | n_gen =    549, tg =  45.54 t/s, tg_3s =  46.86 t/s
+[2026-11-08 14:30:54][DEBUG] 1.40.379.982 I slot print_timing: id  2 | task 2237 | n_gen =    677, tg =  44.88 t/s, tg_3s =  42.26 t/s
+[2026-11-08 14:30:57][DEBUG] 1.43.397.451 I slot print_timing: id  2 | task 2237 | n_gen =    816, tg =  45.08 t/s, tg_3s =  46.07 t/s
+[2026-11-08 14:31:00][DEBUG] 1.46.412.606 I slot print_timing: id  2 | task 2237 | n_gen =    957, tg =  45.32 t/s, tg_3s =  46.76 t/s
+[2026-11-08 14:31:01][DEBUG] 1.47.876.928 I slot print_timing: id  2 | task 2237 | prompt eval time =     124.77 ms /   111 tokens (    1.12 ms per token,   889.64 tokens per second)
+1.47.876.935 I slot print_timing: id  2 | task 2237 |        eval time =   22559.94 ms /  1024 tokens (   22.05 ms per token,    45.35 tokens per second)
+1.47.876.937 I slot print_timing: id  2 | task 2237 |       total time =   22684.72 ms /  1135 tokens
+1.47.876.938 I slot print_timing: id  2 | task 2237 |    graphs reused =       3228
+1.47.876.939 I slot print_timing: id  2 | task 2237 |   graph reallocs =          0    /     0        (same size) / (changed size)
+1.47.876.963 I slot      release: id  2 | task 2237 | stop processing: n_tokens = 1134, truncated = 0
+[2026-11-08 14:31:01][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:31:01][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-j7ne7tfzni7pbt0tzd6j2a",
+  "object": "chat.completion",
+  "created": 1794130238,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Сәлем! Мен сенің бағдарламалық инженерия оқытушыңмын. Бүгінгі тақырыбымыз — мәтіндік манипуляциялар және алгоритмдер.\n\nПалиндром — бұл оқшаулы немесе сөйлемнің алдынан және артынан бірдей оқылатын түрі (мысалы: \"radar\", \"level\" немесе \"Алле\"). Тапсырманың шарты бойынша біз мәтіндегі **бос орындарды** және **регистрді** (үлкен/кіші әріп) ескермейтін функция жазуымыз керек.\n\n### Шешу жолы:\n1.  **Тазалау (Normalization):** Алдымен берілген мәтіндігімізді \"тазалау\" керек. Мәтіндегі барлық бос орындарды алып тастаймыз және барлық әріптерді кіші әріпке (lowercase)",
+        "reasoning_content": "*   Role: Software Engineering Teacher.\n    *   Language: Kazakh (explanation) and Python (code).\n    *   Task: Write a Python function `is_palindrome(s: str) -> bool` that checks if a string is a palindrome, ignoring case and whitespace.\n\n    *   *Concept:* A palindrome is a word/phrase that reads the same forwards and backwards (e.g., \"Radar\", \"A man, a plan, a canal: Panama\").\n    *   *Requirements:*\n        1.  Ignore case (e.g., 'A' == 'a').\n        2.  Ignore whitespace (e.g., \"race car\" == \"racecar\").\n        3.  *Implicitly:* Usually, punctuation is also ignored in these types of problems, but the prompt specifically mentions \"registers\" (case) and \"spaces\". I should probably stick to those two or mention punctuation for completeness. Let's stick to the prompt's specific requirements first but make it robust.\n\n    *   *Step 1: Pre-processing.*\n        *   Convert the string to lowercase using `.lower()`.\n        *   Remove spaces using `.replace(\" \", \"\")`.\n    *   *Step 2: Comparison.*\n        *   Compare the processed string with its reverse.\n        *   Reversing in Python: `s[::-1]`.\n    *   *Step 3: Return.*\n        *   Return `True` if they match, `False` otherwise.\n\n    *   *Greeting:* \"Сәлем! Мен сенің бағдарламалық инженерия оқытушыңмын.\" (Hello! I am your software engineering teacher.)\n    *   *Explanation of the logic:*\n        1.  String normalization (case and spaces).\n        2.  Reversing the string.\n        3.  Comparison.\n    *   *Code structure:* Clear, commented, and includes test cases.\n\n    *   *Code:*\n        ```python\n        def is_palindrome(s: str) -> bool:\n            # Step 1: Remove spaces and convert to lowercase\n            cleaned_s = s.replace(\" \", \"\").lower()\n            # Step 2: Compare with reverse\n            return cleaned_s == cleaned_s[::-1]\n        ```\n\n    *   *Refining the explanation:*\n        *   Explain `replace(\" \", \"\")`: This removes all spaces.\n        *   Explain `.lower()`: This makes everything lowercase so 'A' and 'a' are treated the same.\n        *   Explain `[::-1]`: This is the \"slicing\" method to reverse a string.\n\n    *   *Teacher's Tone:* Encouraging, clear, and structured.\n\n    *   *Intro:* Сәлем! Бағдарламалық инженерия әлеміне қош келдің. Бүгінгі тапсырмамыз — палиндромді анықтайтын функция жазу.\n    *   *Logic:*\n        1.  **Тазалау (Cleaning):** Мәтіндігімізді \"тазалау\" керек. Бос орындарды алып тастаймыз және барлық әріптерді кіші әріпке айналдырамыз.\n        2.  **Керіс (Reversing):** Тазаланған мәтінді керісімен салыстырамыз.\n    *   *Code block.*\n    *   *Examples.*\n\n    *   Teacher role? Yes.\n    *   Kazakh language? Yes.\n    *   Working Python code? Yes.\n    *   Ignore case and spaces? Yes.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 111,
+    "completion_tokens": 1024,
+    "total_tokens": 1135,
+    "completion_tokens_details": {
+      "reasoning_tokens": 793
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:31:03][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert Software Engineering teaching assistant. Explain clearly and provide correct, runnable Python code."
+    },
+    {
+      "role": "user",
+      "content": "Fix IndexError in binary search: `mid = (low + hig... <Truncated in logs> ...`low = mid` causes infinite loop. Explain the fix."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:31:03][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:31:03][DEBUG] 1.49.936.149 I slot get_availabl: id  3 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+[2026-11-08 14:31:03][DEBUG] 1.49.936.196 I slot launch_slot_: id  3 | task 3264 | processing task, is_child = 0
+[2026-11-08 14:31:03][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:31:03][INFO][google/gemma-4-12b-qat] Prompt processing progress: 37.0%
+[2026-11-08 14:31:03][INFO][google/gemma-4-12b-qat] Prompt processing progress: 94.5%
+[2026-11-08 14:31:03][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:31:06][DEBUG] 1.53.189.242 I slot print_timing: id  3 | task 3264 | n_gen =    150, tg =  49.44 t/s, tg_3s =  49.77 t/s
+[2026-11-08 14:31:09][DEBUG] 1.56.194.951 I slot print_timing: id  3 | task 3264 | n_gen =    298, tg =  49.34 t/s, tg_3s =  49.24 t/s
+[2026-11-08 14:31:12][DEBUG] 1.59.209.420 I slot print_timing: id  3 | task 3264 | n_gen =    452, tg =  49.92 t/s, tg_3s =  51.09 t/s
+[2026-11-08 14:31:15][DEBUG] 2.02.219.388 I slot print_timing: id  3 | task 3264 | n_gen =    592, tg =  49.07 t/s, tg_3s =  46.51 t/s
+[2026-11-08 14:31:18][DEBUG] 2.05.230.027 I slot print_timing: id  3 | task 3264 | n_gen =    731, tg =  48.49 t/s, tg_3s =  46.17 t/s
+[2026-11-08 14:31:22][DEBUG] 2.08.253.097 I slot print_timing: id  3 | task 3264 | n_gen =    878, tg =  48.51 t/s, tg_3s =  48.63 t/s
+[2026-11-08 14:31:25][DEBUG] 2.11.271.897 I slot print_timing: id  3 | task 3264 | n_gen =   1017, tg =  48.16 t/s, tg_3s =  46.04 t/s
+[2026-11-08 14:31:25][DEBUG] 2.11.412.065 I slot print_timing: id  3 | task 3264 | prompt eval time =     103.98 ms /    73 tokens (    1.42 ms per token,   702.07 tokens per second)
+2.11.412.072 I slot print_timing: id  3 | task 3264 |        eval time =   21236.83 ms /  1024 tokens (   20.76 ms per token,    48.17 tokens per second)
+2.11.412.073 I slot print_timing: id  3 | task 3264 |       total time =   21340.81 ms /  1097 tokens
+2.11.412.074 I slot print_timing: id  3 | task 3264 |    graphs reused =       4246
+2.11.412.075 I slot print_timing: id  3 | task 3264 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2.11.412.093 I slot      release: id  3 | task 3264 | stop processing: n_tokens = 1096, truncated = 0
+[2026-11-08 14:31:25][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:31:25][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-8a93z69dwyiw9qypdjsrek",
+  "object": "chat.completion",
+  "created": 1794130263,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! As your Software Engineering TA, I can tell you that this is one of the most common \"off-by-one\" errors students encounter when first implementing binary search.\n\nHere is the breakdown of why this happens and how to fix it.\n\n### The Problem: Why `low = mid` causes an infinite loop\n\nThe goal of binary search is to **shrink the search space** in every iteration. If the search space stops shrinking, the loop runs forever.\n\nConsider this scenario:\n*   **Array:** `[1, 10]`\n*   **Target:** `10`\n*   **Current State:** `low = 0`, `high = 1`\n\n**Step-by-step execution with the bug:**\n1.  Calculate `mid`: `(0 + 1) // 2 = 0`.\n2.  Check `arr[mid]`: `arr[0]` is `1`.\n3.  Since `1 < 10` (target), we need to search the right side.\n4.  **The Bug:** You set `low = mid`. Since `mid` was `0`, `low` remains `0`.\n5.  **The Result:** The next iteration starts with `low = 0` and `high = 1` again. The variables never change, and the loop runs forever.\n\n### The Fix: Use `mid + 1` and `mid - 1`\n\nTo guarantee the search space shrinks every single time, you must move the boundaries **past** the middle element, because you have already checked the middle element and know it is not your target.\n\n",
+        "reasoning_content": "Expert Software Engineering Teaching Assistant.\n`IndexError` and infinite loops in Binary Search.\n`mid = (low + high) // 2` combined with `low = mid` when the target is not found.\nExplain the fix and provide correct, runnable Python code.\n\n    *   *Scenario:* Binary search on a list.\n    *   *The Logic:* If `target > list[mid]`, we want to search the right half.\n    *   *The Error:* If we set `low = mid`, and `low` and `high` are adjacent (e.g., `low=0`, `high=1`), then `mid = (0+1)//2 = 0`. If the target is greater than `list[0]`, we set `low = 0`. Now `low` is still 0, and `high` is still 1. The loop repeats forever.\n    *   *The Solution:* Use `low = mid + 1` and `high = mid - 1`.\n\n    *   *Introduction:* Acknowledge the problem. It's a classic \"off-by-one\" error in algorithm design.\n    *   *The \"Why\":* Explain the math.\n        *   Show the specific case where it fails (e.g., `low = 0`, `high = 1`).\n        *   Explain how `low = mid` fails to shrink the search space.\n    *   *The Fix:*\n        *   Explain `low = mid + 1`.\n        *   Explain `high = mid - 1`.\n        *   Mention the boundary condition (the loop condition `while low <= high`).\n    *   *Code Example:*\n        *   Provide a \"Broken\" version (commented out or clearly labeled).\n        *   Provide the \"Fixed\" version.\n        *   Include test cases (target exists, target doesn't exist, list of size 1).\n    *   *Complexity Analysis:* Briefly mention $O(\\log n)$ to reinforce the \"Software Engineering\" aspect.\n\n    *   *Drafting the \"Why\":*\n        If `low = 0` and `high = 1`, `mid = 0`.\n        If `target > list[0]`, and we do `low = mid`, `low` stays `0`.\n        The range `[0, 1]` never shrinks. Infinite loop!\n\n    *   *Drafting the Code:*\n        ```python\n        def binary_search(arr, target):\n            low = 0\n            high = len(arr) - 1\n            while low <= high:\n                mid = (low + high) // 2\n                if arr[mid] == target:\n                    return mid\n                elif arr[mid] < target:\n                    low = mid + 1  # The Fix\n                else:\n                    high = mid - 1 # The Fix\n            return -1\n        ```\n\n    *   *Refining the Explanation:* Use clear headings. Use bold text for emphasis. Ensure the tone is encouraging and educational.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 1024,
+    "total_tokens": 1097,
+    "completion_tokens_details": {
+      "reasoning_tokens": 671
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:31:27][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Вы преподаватель инженерии программного обеспечени... <Truncated in logs> ...ском языке и предоставляйте работающий код Python."
+    },
+    {
+      "role": "user",
+      "content": "Исправьте ошибку IndexError в бинарном поиске: `mi... <Truncated in logs> ... вызывает бесконечный цикл. Объясните исправление."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:31:27][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:31:27][DEBUG] 2.13.467.255 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = 59383895
+[2026-11-08 14:31:27][DEBUG] 2.13.467.411 I slot launch_slot_: id  0 | task 4291 | processing task, is_child = 0
+[2026-11-08 14:31:27][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:31:27][INFO][google/gemma-4-12b-qat] Prompt processing progress: 38.5%
+[2026-11-08 14:31:27][INFO][google/gemma-4-12b-qat] Prompt processing progress: 95.6%
+[2026-11-08 14:31:27][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:31:30][DEBUG] 2.16.756.397 I slot print_timing: id  0 | task 4291 | n_gen =    144, tg =  47.64 t/s, tg_3s =  47.97 t/s
+[2026-11-08 14:31:33][DEBUG] 2.19.757.504 I slot print_timing: id  0 | task 4291 | n_gen =    284, tg =  47.14 t/s, tg_3s =  46.65 t/s
+[2026-11-08 14:31:36][DEBUG] 2.22.773.855 I slot print_timing: id  0 | task 4291 | n_gen =    428, tg =  47.34 t/s, tg_3s =  47.74 t/s
+[2026-11-08 14:31:39][DEBUG] 2.25.792.954 I slot print_timing: id  0 | task 4291 | n_gen =    567, tg =  47.02 t/s, tg_3s =  46.04 t/s
+[2026-11-08 14:31:42][DEBUG] 2.28.804.120 I slot print_timing: id  0 | task 4291 | n_gen =    708, tg =  46.98 t/s, tg_3s =  46.83 t/s
+[2026-11-08 14:31:45][DEBUG] 2.31.808.159 I slot print_timing: id  0 | task 4291 | n_gen =    849, tg =  46.97 t/s, tg_3s =  46.94 t/s
+[2026-11-08 14:31:48][DEBUG] 2.34.823.033 I slot print_timing: id  0 | task 4291 | n_gen =    989, tg =  46.89 t/s, tg_3s =  46.44 t/s
+[2026-11-08 14:31:49][DEBUG] 2.35.598.129 I slot print_timing: id  0 | task 4291 | prompt eval time =     143.94 ms /    91 tokens (    1.58 ms per token,   632.20 tokens per second)
+2.35.598.137 I slot print_timing: id  0 | task 4291 |        eval time =   21843.54 ms /  1024 tokens (   21.35 ms per token,    46.83 tokens per second)
+2.35.598.139 I slot print_timing: id  0 | task 4291 |       total time =   21987.48 ms /  1115 tokens
+2.35.598.141 I slot print_timing: id  0 | task 4291 |    graphs reused =       5264
+2.35.598.143 I slot print_timing: id  0 | task 4291 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2.35.598.166 I slot      release: id  0 | task 4291 | stop processing: n_tokens = 1114, truncated = 0
+[2026-11-08 14:31:49][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:31:49][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-q5x5mp1ro6hjt82yabha5",
+  "object": "chat.completion",
+  "created": 1794130287,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Здравствуйте, студент. Как преподаватель инженерии программного обеспечения, я рад, что вы обратили внимание на эту деталь. Это классическая ошибка при реализации алгоритмов, которая часто встречается у начинающих программистов.\n\nДавайте разберем проблему по полочкам.\n\n### Суть проблемы\n\nОшибка возникает из-за того, что в определенных условиях переменная `low` перестает изменяться, и цикл становится бесконечным.\n\nРассмотрим ситуацию, когда у нас есть массив из двух элементов, например `[1, 5]`, и мы ищем число `6`.\n\n1.  **Начальные условия:** `low = 0`, `high = 1`.\n2.  **Расчет середины:** `mid = (0 + 1) // 2`, что дает `mid = 0` (так как в Python `//` — это целочисленное деление).\n3.  **Сравнение:** Мы видим, что `arr[0]` (это 1) меньше нашего целевого числа `6",
+        "reasoning_content": "*   *Role:* Software Engineering Professor.\n    *   *Style:* Clear, Russian language, provide working Python code.\n    *   *Problem:* `IndexError` and infinite loop in binary search when `low = mid` is used and the element is not found.\n    *   *Specific context:* `mid = (low + high) // 2`.\n\n    *   *Scenario:* Binary search on a sorted list.\n    *   *The Loop Condition:* Usually `while low <= high`.\n    *   *The Update Rules:*\n        *   If `target < list[mid]`, we need to look at the left half.\n        *   If `target > list[mid]`, we need to look at the right half.\n    *   *The Bug:* If we use `low = mid` instead of `low = mid + 1` (or `high = mid - 1` instead of `high = mid`), and the target is greater than the current `mid` element, we might get stuck.\n    *   *Example:* `low = 0`, `high = 1`. `mid = (0 + 1) // 2 = 0`. If `target > list[0]`, and we set `low = mid`, then `low` stays `0`. The loop repeats forever.\n    *   *The Fix:* Use `low = mid + 1` and `high = mid - 1`. This ensures the search space strictly shrinks in every iteration.\n\n    *   *Introduction:* Acknowledge the student's question. Set the tone (professional, educational).\n    *   *Explanation of the Problem:*\n        *   Explain how `mid` is calculated (integer division).\n        *   Show the specific case where `low` and `high` are adjacent.\n        *   Explain why `low = mid` fails to move the pointer.\n    *   *The Solution:*\n        *   Explain why `mid + 1` and `mid - 1` are necessary.\n        *   Explain how this prevents the infinite loop and ensures the search space reduces.\n    *   *Code Example:*\n        *   Show the \"Broken\" code (commented out or clearly marked).\n        *   Show the \"Correct\" code.\n        *   Include a test case.\n    *   *Complexity Analysis (Optional but good for a professor):* Briefly mention $O(\\log n)$.\n\n    *   *Greeting:* \"Здравствуйте, студент. Давайте разберем эту классическую ошибку...\"\n    *   *Analysis:*\n        *   When `low = 0` and `high = 1`, `mid = 0`.\n        *   If the target is larger than `list[0]`, we want to look at index 1.\n        *   If we do `low = mid`, `low` remains 0. Loop repeats.\n    *   *The Fix:* `low = mid + 1` and `high = mid - 1`.\n    *   *Code:*\n        ```python\n        def binary_search(arr, target):\n            low = 0\n            high = len(arr) - 1\n            while low <= high:\n                mid = (low + high) // 2\n                if arr[mid] == target:\n                    return mid\n                elif arr[mid] < target:\n                    low = mid + 1  # The fix\n                else:\n                    high = mid - 1 # The fix\n            return -1\n        ```\n\n    *   Clear Russian? Yes.\n    *   Working Python code? Yes.\n    *   Explanation of the fix? Yes.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 91,
+    "completion_tokens": 1024,
+    "total_tokens": 1115,
+    "completion_tokens_details": {
+      "reasoning_tokens": 799
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:31:51][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Сіз бағдарламалық инженерия оқытушысысыз. Түсініктемені тек қазақ тілінде беріп, жұмыс істейтін Python кодын ұсыныңыз."
+    },
+    {
+      "role": "user",
+      "content": "Екілікค้นудағы IndexError қатесін жөндеңіз: `mid =... <Truncated in logs> ...да `low = mid` шексіз цикл тудырады. Түсіндіріңіз."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:31:51][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:31:51][DEBUG] 2.37.638.626 I slot get_availabl: id  1 | task -1 | selected slot by LRU, n_tokens = 0, t_last = 83004149
+[2026-11-08 14:31:51][DEBUG] 2.37.638.842 I slot launch_slot_: id  1 | task 5318 | processing task, is_child = 0
+[2026-11-08 14:31:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:31:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 46.4%
+[2026-11-08 14:31:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 96.8%
+[2026-11-08 14:31:51][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:31:54][DEBUG] 2.40.968.540 I slot print_timing: id  1 | task 5318 | n_gen =    131, tg =  43.12 t/s, tg_3s =  43.45 t/s
+[2026-11-08 14:31:57][DEBUG] 2.43.984.666 I slot print_timing: id  1 | task 5318 | n_gen =    265, tg =  43.77 t/s, tg_3s =  44.43 t/s
+[2026-11-08 14:32:00][DEBUG] 2.46.999.562 I slot print_timing: id  1 | task 5318 | n_gen =    408, tg =  44.99 t/s, tg_3s =  47.43 t/s
+[2026-11-08 14:32:03][DEBUG] 2.50.021.612 I slot print_timing: id  1 | task 5318 | n_gen =    550, tg =  45.49 t/s, tg_3s =  46.99 t/s
+[2026-11-08 14:32:06][DEBUG] 2.53.038.353 I slot print_timing: id  1 | task 5318 | n_gen =    691, tg =  45.74 t/s, tg_3s =  46.74 t/s
+[2026-11-08 14:32:09][DEBUG] 2.56.039.585 I slot print_timing: id  1 | task 5318 | n_gen =    829, tg =  45.78 t/s, tg_3s =  45.98 t/s
+[2026-11-08 14:32:12][DEBUG] 2.59.049.181 I slot print_timing: id  1 | task 5318 | n_gen =    972, tg =  46.03 t/s, tg_3s =  47.51 t/s
+[2026-11-08 14:32:13][DEBUG] 3.00.136.883 I slot print_timing: id  1 | task 5318 | prompt eval time =     177.12 ms /   125 tokens (    1.42 ms per token,   705.74 tokens per second)
+3.00.136.889 I slot print_timing: id  1 | task 5318 |        eval time =   22183.37 ms /  1024 tokens (   21.68 ms per token,    46.12 tokens per second)
+3.00.136.891 I slot print_timing: id  1 | task 5318 |       total time =   22360.49 ms /  1149 tokens
+3.00.136.892 I slot print_timing: id  1 | task 5318 |    graphs reused =       6282
+3.00.136.893 I slot print_timing: id  1 | task 5318 |   graph reallocs =          0    /     0        (same size) / (changed size)
+3.00.136.916 I slot      release: id  1 | task 5318 | stop processing: n_tokens = 1148, truncated = 0
+[2026-11-08 14:32:13][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:32:13][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-tt0nz4zsqmucirf6mab1",
+  "object": "chat.completion",
+  "created": 1794130311,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Сәлем! Мен бағдарламалық инженерия оқытушысымын. Бүгінгі тақырыбымыз — екілік іздеу (Binary Search) алгоритмындағы логикалық қателерді анықтау және оларды түзету.\n\n### Мәселенің түсіндірмесі\n\nЕкілік іздеу алгоритмында біз тізінді екі бөлікке бөліп, ортадағы элементті (`mid`) тексерікten өтіземіз. Егер іздеп жатқан элемент ортадағыдан үлкен болса, біз `low` шегін ортаға жылжытамыз.\n\n**Неге `low = mid` шексіз циклді тудырады?**\n\n",
+        "reasoning_content": "*   Role: Software Engineering Instructor.\n    *   Language: Kazakh (explanation) and Python (code).\n    *   Problem: `IndexError` and infinite loop in Binary Search when `low = mid` is used instead of `low = mid + 1` (or `high = mid - 1`) when an element is not found.\n    *   Specific scenario: `mid = (low + high) // 2`.\n\n    *   *Why does `low = mid` cause an infinite loop?*\n        *   Consider `low = 0`, `high = 1`.\n        *   `mid = (0 + 1) // 2 = 0`.\n        *   If the target is greater than the element at `mid` (index 0), and we set `low = mid`, then `low` remains 0.\n        *   The next iteration: `low = 0`, `high = 1`, `mid = 0`.\n        *   Loop repeats forever.\n    *   *Why does it cause `IndexError`?*\n        *   Actually, the infinite loop usually happens *before* an `IndexError` in many cases, but if the logic allows `high` to go out of bounds or if the loop doesn't terminate and tries to access an index that doesn't exist (though in standard binary search, it's usually the infinite loop that's the primary issue). However, if the logic is slightly different, it might try to access `list[high]` where `high` exceeds the length.\n    *   *The Fix:*\n        *   Use `low = mid + 1` and `high = mid - 1`. This ensures the search space strictly shrinks in every iteration.\n\n    *   *Introduction:* Acknowledge the role (Instructor).\n    *   *Explanation of the Problem:*\n        *   Explain how `mid` is calculated (integer division).\n        *   Show the specific case where `low` and `high` are adjacent (e.g., 0 and 1).\n        *   Explain why `low = mid` keeps `low` at the same value, preventing the loop from ending.\n    *   *The Solution:*\n        *   Explain that we must exclude `mid` because we already checked it.\n        *   Show the corrected logic: `low = mid + 1` and `high = mid - 1`.\n    *   *Code Example:*\n        *   Provide a \"Wrong\" version (commented or explained).\n        *   Provide a \"Correct\" version.\n    *   *Complexity Analysis:* Briefly mention $O(\\log n)$.\n\n    *   *Instructor tone:* \"Сәлем! Мен бағдарламалық инженерия оқытушысымын...\" (Hello! I am a software engineering instructor...)\n    *   *Explanation:*\n        *   \"Неге шексіз цикл (infinite loop) болады?\" (Why does an infinite loop occur?)\n        *   Example: `low = 0`, `high = 1`. `mid = (0+1)//2 = 0`. If `target > list[0]`, then `low = mid` means `low` stays 0.\n    *   *Code:*\n        *   `def binary_search(arr, target):`\n        *   Correct logic: `low = mid + 1`, `high = mid - 1`.\n\n    *   *Title:* Binary Search Error Analysis.\n    *   *Explanation:*\n        1.  The `mid` calculation: `(low + high) // 2` rounds down.\n        2.  The \"Stuck\" condition: When `high = low + 1`.\n        3.  The Fix: Moving the boundaries past `mid`.\n    *   *Python Code:* Clear, commented, and runnable.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 125,
+    "completion_tokens": 1024,
+    "total_tokens": 1149,
+    "completion_tokens_details": {
+      "reasoning_tokens": 842
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:32:15][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an expert Software Engineering teaching assistant. Explain clearly and provide correct, runnable Python code."
+    },
+    {
+      "role": "user",
+      "content": "Explain why `def foo(x, y=[]): x.append(y)` causes... <Truncated in logs> ...t bug in Python and show how to fix it using None."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:32:15][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:32:15][DEBUG] 3.02.196.015 I slot get_availabl: id  2 | task -1 | selected slot by LRU, n_tokens = 0, t_last = 107853954
+[2026-11-08 14:32:15][DEBUG] 3.02.196.198 I slot launch_slot_: id  2 | task 6345 | processing task, is_child = 0
+[2026-11-08 14:32:16][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:32:16][INFO][google/gemma-4-12b-qat] Prompt processing progress: 39.7%
+[2026-11-08 14:32:16][INFO][google/gemma-4-12b-qat] Prompt processing progress: 94.1%
+[2026-11-08 14:32:16][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:32:19][DEBUG] 3.05.550.270 I slot print_timing: id  2 | task 6345 | n_gen =    138, tg =  45.58 t/s, tg_3s =  45.91 t/s
+[2026-11-08 14:32:22][DEBUG] 3.08.553.139 I slot print_timing: id  2 | task 6345 | n_gen =    275, tg =  45.60 t/s, tg_3s =  45.62 t/s
+[2026-11-08 14:32:25][DEBUG] 3.11.560.077 I slot print_timing: id  2 | task 6345 | n_gen =    422, tg =  46.70 t/s, tg_3s =  48.89 t/s
+[2026-11-08 14:32:28][DEBUG] 3.14.574.586 I slot print_timing: id  2 | task 6345 | n_gen =    571, tg =  47.38 t/s, tg_3s =  49.43 t/s
+[2026-11-08 14:32:31][DEBUG] 3.17.589.410 I slot print_timing: id  2 | task 6345 | n_gen =    720, tg =  47.79 t/s, tg_3s =  49.42 t/s
+[2026-11-08 14:32:34][DEBUG] 3.20.599.706 I slot print_timing: id  2 | task 6345 | n_gen =    862, tg =  47.69 t/s, tg_3s =  47.17 t/s
+[2026-11-08 14:32:37][DEBUG] 3.23.617.812 I slot print_timing: id  2 | task 6345 | n_gen =    996, tg =  47.22 t/s, tg_3s =  44.40 t/s
+[2026-11-08 14:32:37][DEBUG] 3.24.221.836 I slot print_timing: id  2 | task 6345 | prompt eval time =     164.74 ms /    68 tokens (    2.42 ms per token,   412.77 tokens per second)
+3.24.221.842 I slot print_timing: id  2 | task 6345 |        eval time =   21677.15 ms /  1024 tokens (   21.19 ms per token,    47.19 tokens per second)
+3.24.221.843 I slot print_timing: id  2 | task 6345 |       total time =   21841.89 ms /  1092 tokens
+3.24.221.844 I slot print_timing: id  2 | task 6345 |    graphs reused =       7300
+3.24.221.845 I slot print_timing: id  2 | task 6345 |   graph reallocs =          0    /     0        (same size) / (changed size)
+3.24.221.864 I slot      release: id  2 | task 6345 | stop processing: n_tokens = 1091, truncated = 0
+[2026-11-08 14:32:37][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:32:37][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-2ktzvfaxkv3heq1jd0mtbt",
+  "object": "chat.completion",
+  "created": 1794130335,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "This is one of the most famous \"gotchas\" in Python. To understand why it happens, you have to understand the difference between **definition time** and **execution time**.\n\n### The Explanation\n\nIn Python, **default arguments are evaluated only once**, at the moment the function is **defined**, not every time the function is called.\n\nWhen you write `def foo(x, y=[])`, Python creates a list object in memory and attaches it to the function object. That specific list instance becomes the default value for `y` for the entire lifetime of the program.\n\n#### The Lifecycle:\n1.  **Definition Time:** Python reads `def foo(x, y=[])`. It creates a list object (let's call it `List_A`).\n2.  **Call 1",
+        "reasoning_content": "The user wants to understand the \"mutable default argument\" bug in Python, specifically why `def foo(x, y=[]): x.append(y)` is problematic, and how to fix it using `None`.\n\n    *   *What is a default argument?* It's a value provided in the function signature if the caller doesn't provide one.\n    *   *When is it evaluated?* This is the key. It's evaluated at *definition time*, not at *execution time*.\n    *   *What happens with mutable objects (like lists, dicts, sets)?* Since the object is created once at definition time, every call to the function that uses the default value shares the *same* object in memory.\n    *   *The specific example:* `def foo(x, y=[]): x.append(y)`.\n        *   Wait, let's look closely at the user's example: `x.append(y)`.\n        *   Actually, usually, the bug is `def foo(y=[]): y.append(x)`.\n        *   In the user's specific example: `def foo(x, y=[]): x.append(y)`.\n        *   If I call `foo(1)`, `y` is the shared list. `x` is `1`. `x.append(y)` will fail because `1` (an int) has no `.append()` method.\n        *   *Correction:* The user likely meant `def foo(x, y=[]): y.append(x)` or `def foo(y=[]): y.append(1)`.\n        *   *Decision:* I should explain the general concept of mutable defaults first, then point out the specific behavior of their example, and then show the standard \"correct\" way to handle it.\n\n    *   **Part 1: The \"Why\" (The Theory)**\n        *   Explain Definition Time vs. Execution Time.\n        *   Explain Object Persistence (the list lives as long as the function object).\n        *   Visual/Mental Model: The list is created once when the script is loaded.\n\n    *   **Part 2: The Bug Demonstration**\n        *   Write a script showing how multiple calls to a function with a default list \"accumulate\" data.\n        *   *Self-Correction:* I'll use the more common pattern `def add_to_list(item, my_list=[]):` to make the point clearer, but I'll address their specific snippet too.\n\n    *   **Part 3: The Fix (The \"None\" Pattern)**\n        *   Explain why `None` works (it's immutable).\n        *   Show the standard boilerplate: `if my_list is None: my_list = []`.\n\n    *   *Introduction:* Acknowledge the commonality of this \"gotcha.\"\n    *   *The Explanation:* Use the term \"Function Object.\" When Python reads the `def` line, it creates a function object. The default arguments are stored in the `__defaults__` attribute of that object.\n    *   *The Code Example:*\n        ```python\n        def add_item(item, my_list=[]):\n            my_list.append(item)\n            return my_list\n\n        print(add_item(1)) # [1]\n        print(add_item(2)) # [1, 2]  <-- The bug!\n        ```\n    *   *The Fix:*\n        ```python\n        def add_item(item, my_list=None):\n            if my_list is None:\n                my_list = []\n            my_list.append(item)\n            return my_list\n        ```\n\n    *   Expert Software Engineering TA tone? Yes (clear, structured, educational).\n    *   Correct, runnable code? Yes.\n    *   Explain the specific bug? Yes.",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 68,
+    "completion_tokens": 1024,
+    "total_tokens": 1092,
+    "completion_tokens_details": {
+      "reasoning_tokens": 852
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:32:40][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Вы преподаватель инженерии программного обеспечени... <Truncated in logs> ...ском языке и предоставляйте работающий код Python."
+    },
+    {
+      "role": "user",
+      "content": "Объясните, почему `def foo(x, y=[]): x.append(y)` ... <Truncated in logs> ... в Python и покажите, как ее исправить через None."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:32:40][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:32:40][DEBUG] 3.26.299.554 I slot get_availabl: id  3 | task -1 | selected slot by LRU, n_tokens = 0, t_last = 131389085
+[2026-11-08 14:32:40][DEBUG] 3.26.299.726 I slot launch_slot_: id  3 | task 7372 | processing task, is_child = 0
+[2026-11-08 14:32:40][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:32:40][INFO][google/gemma-4-12b-qat] Prompt processing progress: 40.7%
+[2026-11-08 14:32:40][INFO][google/gemma-4-12b-qat] Prompt processing progress: 95.3%
+[2026-11-08 14:32:40][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:32:43][DEBUG] 3.29.553.524 I slot print_timing: id  3 | task 7372 | n_gen =    141, tg =  46.58 t/s, tg_3s =  46.92 t/s
+[2026-11-08 14:32:46][DEBUG] 3.32.557.420 I slot print_timing: id  3 | task 7372 | n_gen =    284, tg =  47.09 t/s, tg_3s =  47.60 t/s
+[2026-11-08 14:32:49][DEBUG] 3.35.573.892 I slot print_timing: id  3 | task 7372 | n_gen =    420, tg =  46.42 t/s, tg_3s =  45.09 t/s
+[2026-11-08 14:32:52][DEBUG] 3.38.590.951 I slot print_timing: id  3 | task 7372 | n_gen =    559, tg =  46.33 t/s, tg_3s =  46.07 t/s
+[2026-11-08 14:32:55][DEBUG] 3.41.593.705 I slot print_timing: id  3 | task 7372 | n_gen =    703, tg =  46.66 t/s, tg_3s =  47.96 t/s
+[2026-11-08 14:32:58][DEBUG] 3.44.612.814 I slot print_timing: id  3 | task 7372 | n_gen =    843, tg =  46.61 t/s, tg_3s =  46.37 t/s
+[2026-11-08 14:33:01][DEBUG] 3.47.614.052 I slot print_timing: id  3 | task 7372 | n_gen =    977, tg =  46.33 t/s, tg_3s =  44.65 t/s
+[2026-11-08 14:33:02][DEBUG] 3.48.668.669 I slot print_timing: id  3 | task 7372 | prompt eval time =     110.39 ms /    86 tokens (    1.28 ms per token,   779.08 tokens per second)
+3.48.668.676 I slot print_timing: id  3 | task 7372 |        eval time =   22120.45 ms /  1024 tokens (   21.62 ms per token,    46.25 tokens per second)
+3.48.668.678 I slot print_timing: id  3 | task 7372 |       total time =   22230.84 ms /  1110 tokens
+3.48.668.678 I slot print_timing: id  3 | task 7372 |    graphs reused =       8318
+3.48.668.680 I slot print_timing: id  3 | task 7372 |   graph reallocs =          0    /     0        (same size) / (changed size)
+3.48.668.701 I slot      release: id  3 | task 7372 | stop processing: n_tokens = 1109, truncated = 0
+[2026-11-08 14:33:02][INFO][google/gemma-4-12b-qat] Model generated tool calls: []
+[2026-11-08 14:33:02][INFO][google/gemma-4-12b-qat] Generated prediction: {
+  "id": "chatcmpl-jhykcdv4tyqqgvten4rpm",
+  "object": "chat.completion",
+  "created": 1794130360,
+  "model": "google/gemma-4-12b-qat",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "*   Role: Software Engineering Professor.\n    *   Language: Russian.\n    *   Task: Explain why `def foo(x, y=[]): x.append(y)` causes a \"mutable default argument\" error (conceptually) and show how to fix it using `None`.\n    *   Constraint: Provide clear explanations and working Python code.\n\n    *   *The Problem:* In Python, default arguments are evaluated only *once* at the time of function definition, not every time the function is called.\n    *   *The Consequence:* If the default argument is a mutable object (like a list, dictionary, or set), that same object is shared across all calls to the function that don't provide an explicit value for that argument.\n    *   *The Specific Example:* `def foo(x, y=[]): x.append(y)`.\n        *   Wait, let's look closely at the user's example: `x.append(y)`.\n        *   If I call `foo(1)`, `x` is 1 (integer), and `y` is the default list `[]`. `1.append([])` will raise an `AttributeError` because integers don't have an `append` method.\n        *   If the user meant `def foo(x, y=[]): y.append(x)`, then the issue is that `y` persists.\n        *   If the user meant `def foo(x, y=[]): x = y.append(x)`, that's also weird.\n        *   *Correction:* Usually, the classic example is `def foo(y=[]): y.append(1)`.\n        *   Let's analyze the user's specific snippet: `def foo(x, y=[]): x.append(y)`.\n            *   If `x` is a list and `y` is the default list, `x` gets the default list appended to it.\n            *   If `x` is not a list, it crashes.\n            *   Regardless, the core issue is that `y` is a *shared* list.\n\n    *   *Introduction:* Set the persona (Professor). Welcome the student.\n    *   *The Core Concept:* Explain \"Evaluation at Definition Time\".\n    *   *Step-by-Step Breakdown:*\n        1.  What happens when the script is loaded? (The list is created).\n        2.  What happens during the first call? (The list is modified).\n        3.  What happens during the second call? (The list still has the old data).\n    *   *Visual/Mental Model:* Think of it as a global variable hidden inside the function signature.\n    *   *The Solution:* The \"Sentinel Value\" pattern (using `None`).\n    *   *Code Examples:*\n        1.  The \"Broken\" way.\n        2.  The \"Correct\" way.\n    *   *Summary/Best Practice:* Always use `None` for mutable defaults.\n\n    *   *Intro:* \"Здравствуйте, студент. Сегодня мы разберем одну из самых классических ловушек...\" (Hello student. Today we'll look at a classic trap...)\n    *   *Explanation:* Explain that `y=[]` is executed once.\n    *   *Code Example 1 (The Problem):*\n        ```python\n        def foo(x, y=[]):\n            x.append(y) # Wait, if x is a list, this appends the default list.\n            # Actually, the user's example is slightly weird because x is usually the input.\n            # Let's use a more standard example to illustrate the point clearly,\n            # but also address their specific code.\n        ```\n        *Self-Correction:* I should stick to their example but explain why it's problematic. If `x` is a list passed by the user, and `y` is the default list, `x` will now contain a reference to that shared default list. If they call it again, `x` will still point to that same list.\n\n    *   *Refining the \"Broken\" example:*\n        Let's use `def foo(x, y=[]): y.append(x)`. This is the standard way to show the bug.\n        However, the user wrote `x.append(y)`.\n        If I call `foo([1], y=[])`, `x` becomes `[1, []]`.\n        If I call `foo([2], y=[])`, `x` becomes `[2, []]`.\n        Wait, if `x` is a new list every time, the \"shared\" nature of `y` doesn't manifest",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 86,
+    "completion_tokens": 1024,
+    "total_tokens": 1110,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1021
+    }
+  },
+  "stats": {},
+  "system_fingerprint": "google/gemma-4-12b-qat"
+}
+[2026-11-08 14:33:04][DEBUG] Received request: POST to /v1/chat/completions with body {
+  "model": "google/gemma-3-12b-it-qat-q4_0-unquantized",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Сіз бағдарламалық инженерия оқытушысысыз. Түсініктемені тек қазақ тілінде беріп, жұмыс істейтін Python кодын ұсыныңыз."
+    },
+    {
+      "role": "user",
+      "content": "Python-да `def foo(x, y=[]): x.append(y)` неліктен... <Truncated in logs> ...ын және оны None арқылы қалай жөндеуді көрсетіңіз."
+    }
+  ],
+  "temperature": 0.2,
+  "max_tokens": 1024
+}
+[2026-11-08 14:33:04][INFO][google/gemma-4-12b-qat] Running chat completion on conversation with 2 messages.
+[2026-11-08 14:33:04][DEBUG] 3.50.732.421 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = 155575158
+[2026-11-08 14:33:04][DEBUG] 3.50.732.683 I slot launch_slot_: id  0 | task 8399 | processing task, is_child = 0
+[2026-11-08 14:33:04][INFO][google/gemma-4-12b-qat] Prompt processing progress: 0.0%
+[2026-11-08 14:33:04][INFO][google/gemma-4-12b-qat] Prompt processing progress: 45.3%
+[2026-11-08 14:33:04][INFO][google/gemma-4-12b-qat] Prompt processing progress: 96.9%
+[2026-11-08 14:33:04][INFO][google/gemma-4-12b-qat] Prompt processing progress: 100.0%
+[2026-11-08 14:33:07][DEBUG] 3.54.048.704 I slot print_timing: id  0 | task 8399 | n_gen =    141, tg =  46.38 t/s, tg_3s =  46.71 t/s

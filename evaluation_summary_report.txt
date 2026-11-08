@@ -1,0 +1,42 @@
+================================================================================
+  RIGOROUS EMPIRICAL EVALUATION REPORT: GEMMA 4 12B IT QAT (Q4_0 GGUF)
+================================================================================
+Dataset Size:   N = 150 SE tasks (50 Syntax, 50 Runtime Debugging, 50 Basic Algorithms)
+Target Model:   lmstudio-community/gemma-4-12B-it-QAT-GGUF (API: google/gemma-4-12b-qat)
+Automated Judge:lmstudio-community/Qwen3.8-27B-GGUF (API: qwen/qwen3.8-27b)
+Human Panel:    3 Calibrated SE Student Evaluators (Daniil, Diyar, Yersultan; Blinded)
+Scoring:        1-5 SE Likert Rubric (Accuracy, Completeness, Clarity)
+--------------------------------------------------------------------------------
+
+[1] OVERALL SCORES ACROSS ALL 150 QUESTIONS (Mean of all 4 evaluators):
+  * Technical Accuracy:       4.24 / 5.00 (Std = 0.73)
+  * Explanatory Completeness: 4.26 / 5.00 (Std = 0.79)
+  * Pedagogical Clarity:      4.31 / 5.00 (Std = 0.75)
+  --> TOTAL AVERAGE SCORE:    4.27 / 5.00 (Std = 0.59)
+
+--------------------------------------------------------------------------------
+[2] PERFORMANCE BY QUESTION CATEGORY & NON-PARAMETRIC SIGNIFICANCE TESTING:
+Category             | Accuracy (95% CI)      | Completeness (95% CI)  | Clarity (95% CI)       | Overall (95% CI)      
+--------------------------------------------------------------------------------
+Syntax Errors        | 4.33 [4.18, 4.46]      | 4.67 [4.54, 4.79]      | 4.48 [4.19, 4.72]      | 4.49 [4.35, 4.62]     
+Runtime Debugging    | 3.84 [3.56, 4.08]      | 3.67 [3.42, 3.93]      | 4.11 [3.90, 4.28]      | 3.88 [3.68, 4.05]     
+Basic Algorithms     | 4.54 [4.42, 4.67]      | 4.43 [4.29, 4.58]      | 4.34 [4.21, 4.47]      | 4.44 [4.38, 4.51]     
+
+Kruskal-Wallis Test on Overall Score: H = 39.68, df = 2, p = 2.42e-09 (eta^2 = 0.256)
+--> Runtime Debugging is statistically significantly inferior to Syntax and Algorithms (p < 0.001).
+
+--------------------------------------------------------------------------------
+[3] HUMAN INTER-RATER RELIABILITY (Daniil, Diyar, Yersultan; N = 150):
+Criterion       | ICC(2,1)   | ICC(2,k)   | Kripp. alpha   | Quad. Kappa (Mean)   | Linear Kappa
+--------------------------------------------------------------------------------
+Accuracy        | 0.686      | 0.868      | 0.685          | 0.684                | 0.553       
+Completeness    | 0.704      | 0.877      | 0.703          | 0.701                | 0.548       
+Clarity         | 0.716      | 0.883      | 0.715          | 0.714                | 0.564       
+
+--------------------------------------------------------------------------------
+[4] LLM-AS-A-JUDGE VALIDATION (Human Consensus vs. Qwen 2.5 32B Judge):
+Criterion       | Exact Agr.   | +/-1 Agr.  | Quad. Kappa  | ICC(2,k)   | Spearman rho   | MAE     
+--------------------------------------------------------------------------------
+Accuracy        | 92.0       % | 100.0    % | 0.930        | 0.964      | 0.890          | 0.171   
+Completeness    | 96.0       % | 100.0    % | 0.970        | 0.985      | 0.905          | 0.180   
+Clarity         | 96.0       % | 100.0    % | 0.967        | 0.983      | 0.905          | 0.144   

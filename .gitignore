@@ -1,0 +1,16 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Temporary worker scripts and OS artifacts
+_temp_snippet.py
+_worker_custom.py
+_worker_test.py
+~$*.docx
+.DS_Store
+Thumbs.db
