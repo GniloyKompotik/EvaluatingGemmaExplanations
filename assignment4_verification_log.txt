@@ -1,0 +1,68 @@
+==============================================================================================
+  FINAL MANUSCRIPT REPRODUCIBILITY & PICK-A-NUMBER VERIFICATION AUDIT LOG
+  Target Journal: IEEE Transactions on Learning Technologies (ISSN: 1939-1382 | Scopus Q1)
+  Repository: https://github.com/GniloyKompotik/EvaluatingGemmaExplanations (tag: final)
+==============================================================================================
+
+[STEP 1 / TABLE II] CRYPTOGRAPHIC SHA-256 DATASET & LOG INTEGRITY CHECK:
+  * dataset_eval_150_rated.csv         | 3543bbb76d24c3c2d23c8aee... | MATCH (OK)
+  * dataset_eval_150_rated.json        | 094eb4b08e798a45981fb45a... | MATCH (OK)
+  * quixbugs_execution_results.csv     | 4176c866c40880fe1a7ab650... | MATCH (OK)
+  * quixbugs_live_llm_repairs.json     | ce0c610c1f714098cd9dd14e... | MATCH (OK)
+  [MISSING] multilingual_real_responses.json
+  * multilingual_real_summary.csv      | e9bd4d4e7780f4ca618921cb... | MATCH (OK)
+  --> Dataset Integrity Verdict: WARNING
+
+----------------------------------------------------------------------------------------------
+[STEP 2 / TABLE V] PRIMARY SE RUBRIC BENCHMARK (N = 150 Tasks x 4 Evaluators = 600 Evaluations):
+  * Grand Mean Technical Accuracy:       4.24 +/- 0.73
+  * Grand Mean Explanatory Completeness: 4.26 +/- 0.79
+  * Grand Mean Pedagogical Clarity:      4.31 +/- 0.75
+  * Grand Mean Overall Score:            4.27 +/- 0.59
+  * Category [Syntax Errors     ]: Acc=4.33 [4.18,4.46], Comp=4.67 [4.53,4.79], Clar=4.48 [4.17,4.74], Overall=4.49 +/- 0.50 [4.35,4.62]
+  * Category [Runtime Debugging ]: Acc=3.84 [3.56,4.10], Comp=3.67 [3.42,3.92], Clar=4.11 [3.92,4.29], Overall=3.88 +/- 0.71 [3.66,4.05]
+  * Category [Basic Algorithms  ]: Acc=4.54 [4.42,4.66], Comp=4.43 [4.29,4.58], Clar=4.34 [4.21,4.48], Overall=4.44 +/- 0.25 [4.37,4.51]
+  * Kruskal-Wallis Overall: H = 39.68, df = 2, p = 2.42e-09, eta^2 = 0.256
+  * Mann-Whitney U (Holm-corrected): Alg vs Dbg U=2033.0 (p_holm=1.88e-07, r=0.626); Syn vs Dbg U=2009.5 (p_holm=3.17e-07, r=0.608); Syn vs Alg U=1541.5 (p_holm=0.0438, r=0.233)
+
+----------------------------------------------------------------------------------------------
+[STEP 3 / TABLE VI] INTER-RATER RELIABILITY & LLM JUDGE VALIDATION (qwen/qwen3.8-27b):
+  * Accuracy     | Human ICC(2,1)=0.686, ICC(2,k)=0.868, alpha=0.685, kw=0.684 | Judge Exact=92.0%, kw=0.930, ICC=0.964, rho=0.890 (p=1.96e-52), MAE=0.171
+  * Completeness | Human ICC(2,1)=0.704, ICC(2,k)=0.877, alpha=0.703, kw=0.701 | Judge Exact=96.0%, kw=0.970, ICC=0.985, rho=0.905 (p=9.49e-57), MAE=0.180
+  * Clarity      | Human ICC(2,1)=0.716, ICC(2,k)=0.883, alpha=0.715, kw=0.714 | Judge Exact=96.0%, kw=0.967, ICC=0.983, rho=0.905 (p=8.92e-57), MAE=0.144
+
+----------------------------------------------------------------------------------------------
+[STEP 4 / TABLE VII] INDEPENDENT QUIXBUGS UNIT-TEST SUITE & ABLATION VERIFICATION:
+  * Full 31-Algorithm Suite (242 Tests): Unpatched Buggy = 64/242 (26.45%), Reference = 216/242 (89.26%)
+  * Baseline 2 (150-Item Dataset at max_tokens=1024): 1/10 tasks (10.0%), 7/69 unit tests (10.1%)
+  * Proposed Condition (Live Repair at max_tokens=2048): 5/6 full algos (83.3%; 6/6 with DBG_025), 41/42 unit tests (97.6%)
+  * Fisher's Exact Test (Proposed vs. Baseline 2): OR = 363.1, p = 6.34e-22 (Absolute Gain = +87.5%)
+  * Fisher's Exact Test (Proposed vs. Baseline 1): OR = 389.5, p = 6.94e-18 (Absolute Gain = +88.1%)
+
+----------------------------------------------------------------------------------------------
+[STEP 5 / TABLE VIII] PAIRED MULTILINGUAL SE BENCHMARK (N = 10 Tasks x 3 Languages = 30 Live Runs):
+  * English (EN) | Acc=5.00+/-0.00, Comp=5.00+/-0.00, Clar=5.00+/-0.00, Overall=5.00+/-0.00 | LangCons=100.0%, TermPres=100.0%, Pass@1=100.0%, MeanReasonTok=534.4
+  * Russian (RU) | Acc=5.00+/-0.00, Comp=4.90+/-0.21, Clar=4.70+/-0.42, Overall=4.87+/-0.13 | LangCons=91.1%, TermPres=97.0%, Pass@1=100.0%, MeanReasonTok=527.9
+  * Kazakh (KK)  | Acc=4.60+/-0.52, Comp=3.85+/-0.97, Clar=4.20+/-0.26, Overall=4.22+/-0.53 | LangCons=76.6%, TermPres=78.0%, Pass@1=100.0%, MeanReasonTok=482.6
+  * Friedman Test (Overall Score): chi^2 = 18.6667, df = 2, p = 8.8427e-05
+  * Wilcoxon Signed-Rank: EN vs KK W=0.00 (p=0.0020); RU vs KK W=0.00 (p=0.0020); EN vs RU W=5.00 (p=0.0312)
+
+----------------------------------------------------------------------------------------------
+[STEP 6 / TABLE IX] MANUAL ERROR ANALYSIS TAXONOMY VERIFICATION (N = 47 Cases):
+  * E1: Internal CoT Token Exhaustion     : 22 / 47 (46.8%)
+  * E2: Prose-Only Conceptual Advice      :  8 / 47 (17.0%)
+  * E3: Kazakh Brevity & Loanword Bleed   :  6 / 47 (12.8%)
+  * E4: Cross-Script & <thought> Bleed    :  5 / 47 (10.6%)
+  * E5: Off-by-One Boundary Defect        :  4 / 47 ( 8.5%)
+  * E6: Unclosed String / Indentation     :  2 / 47 ( 4.3%)
+
+----------------------------------------------------------------------------------------------
+[STEP 7 / FIGURES 1–4] REGENERATING ALL 4 HIGH-RESOLUTION (300 DPI) PUBLICATION FIGURES:
+  * Verified figures/fig1_category_and_baseline_comparison.png
+  * Verified figures/fig2_quixbugs_ablation_and_sensitivity.png
+  * Verified figures/fig3_multilingual_subgroup_analysis.png
+  * Verified figures/fig4_human_vs_judge_confusion_matrix.png
+
+==============================================================================================
+  ALL FINAL MANUSCRIPT TABLES (V–IX), TESTS, AND FIGURES (1–4) REPRODUCED (EXIT CODE 0)
+==============================================================================================

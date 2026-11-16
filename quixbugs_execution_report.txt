@@ -1,0 +1,74 @@
+========================================================================================
+  REAL INDEPENDENT QUIXBUGS TEST SUITE & LIVE GEMMA-4-12B-QAT REPAIR BENCHMARK
+========================================================================================
+
+[PART 1] FULL QUIXBUGS SUITE BASELINE VERIFICATION (31 Algorithms)
+Algorithm                  | Buggy Baseline     | Correct Reference  | Buggy Behavior
+----------------------------------------------------------------------------------------
+bitcount                   | 0/9 (0.0%)         | 9/9 (100.0%)       | TIMEOUT (INFINITE LOOP)
+bucketsort                 | 1/7 (14.3%)        | 7/7 (100.0%)       | 6 wrong outputs
+find_first_in_sorted       | 0/7 (0.0%)         | 7/7 (100.0%)       | TIMEOUT (INFINITE LOOP)
+find_in_sorted             | 5/7 (71.4%)        | 7/7 (100.0%)       | 2 runtime errors
+flatten                    | 1/7 (14.3%)        | 7/7 (100.0%)       | 6 wrong outputs
+gcd                        | 1/6 (16.7%)        | 6/6 (100.0%)       | 5 runtime errors
+get_factors                | 1/11 (9.1%)        | 11/11 (100.0%)     | 10 wrong outputs
+hanoi                      | 1/8 (12.5%)        | 1/8 (12.5%)        | 7 wrong outputs
+is_valid_parenthesization  | 2/3 (66.7%)        | 3/3 (100.0%)       | 1 wrong outputs
+kheapsort                  | 1/4 (25.0%)        | 4/4 (100.0%)       | 3 wrong outputs
+knapsack                   | 0/10 (0.0%)        | 0/10 (0.0%)        | TIMEOUT (INFINITE LOOP)
+kth                        | 3/7 (42.9%)        | 7/7 (100.0%)       | 4 runtime errors
+lcs_length                 | 1/9 (11.1%)        | 9/9 (100.0%)       | 8 wrong outputs
+levenshtein                | 0/7 (0.0%)         | 0/7 (0.0%)         | TIMEOUT (INFINITE LOOP)
+lis                        | 8/12 (66.7%)       | 12/12 (100.0%)     | 4 wrong outputs
+longest_common_subsequence | 6/10 (60.0%)       | 10/10 (100.0%)     | 4 wrong outputs
+max_sublist_sum            | 2/6 (33.3%)        | 6/6 (100.0%)       | 4 wrong outputs
+mergesort                  | 1/14 (7.1%)        | 14/14 (100.0%)     | 13 runtime errors
+next_palindrome            | 4/5 (80.0%)        | 5/5 (100.0%)       | 1 wrong outputs
+next_permutation           | 0/8 (0.0%)         | 8/8 (100.0%)       | 8 wrong outputs
+pascal                     | 1/5 (20.0%)        | 5/5 (100.0%)       | 3 runtime errors
+possible_change            | 1/10 (10.0%)       | 10/10 (100.0%)     | 9 runtime errors
+powerset                   | 1/5 (20.0%)        | 5/5 (100.0%)       | 4 wrong outputs
+quicksort                  | 12/13 (92.3%)      | 13/13 (100.0%)     | 1 wrong outputs
+rpn_eval                   | 3/6 (50.0%)        | 6/6 (100.0%)       | 3 wrong outputs
+shunting_yard              | 2/6 (33.3%)        | 6/6 (100.0%)       | 4 wrong outputs
+sieve                      | 1/6 (16.7%)        | 6/6 (100.0%)       | 5 wrong outputs
+sqrt                       | 0/7 (0.0%)         | 5/7 (71.4%)        | TIMEOUT (INFINITE LOOP)
+subsequences               | 2/12 (16.7%)       | 12/12 (100.0%)     | 10 wrong outputs
+to_base                    | 3/10 (30.0%)       | 10/10 (100.0%)     | 7 wrong outputs
+wrap                       | 0/5 (0.0%)         | 5/5 (100.0%)       | 5 wrong outputs
+----------------------------------------------------------------------------------------
+TOTAL ACROSS 31 ALGORITHMS (242 Unit Tests):
+  * Unpatched Buggy QuixBugs Pass Rate:  64/242 (26.45%)
+  * Ground-Truth Reference Pass Rate:    216/242 (89.26%)
+
+========================================================================================
+[PART 2] EVALUATION OF QUIXBUGS TASKS IN 150-ITEM DATASET (max_tokens = 1024)
+========================================================================================
+Task ID    | Algorithm              | Code Block   | Unit Tests Passed  | Outcome
+----------------------------------------------------------------------------------------
+DBG_025    | find_first_in_sorted   | Yes          | 7/7 (100.0%)       | ALL PASSED
+DBG_029    | sieve                  | No (Trunc.)  | 0/6 (0.0%)         | Truncated / No function def
+DBG_053    | bucketsort             | No (Trunc.)  | 0/7 (0.0%)         | Truncated / No function def
+DBG_057    | flatten                | No (Trunc.)  | 0/7 (0.0%)         | Truncated / No function def
+DBG_085    | gcd                    | No (Trunc.)  | 0/6 (0.0%)         | Truncated / No function def
+DBG_113    | bitcount               | No (Trunc.)  | 0/9 (0.0%)         | Truncated / No function def
+DBG_141    | find_first_in_sorted   | No (Trunc.)  | 0/7 (0.0%)         | Truncated / No function def
+DBG_145    | sieve                  | No (Trunc.)  | 0/6 (0.0%)         | Truncated / No function def
+DBG_169    | bucketsort             | Yes          | 0/7 (0.0%)         | 0 failed, 7 errors
+DBG_173    | flatten                | No (Trunc.)  | 0/7 (0.0%)         | Truncated / No function def
+----------------------------------------------------------------------------------------
+1024-Token Cap Dataset QuixBugs Pass@1: 1/10 tasks (10.0%), 7/69 unit tests (10.1%)
+
+========================================================================================
+[PART 3] LIVE GEMMA-4-12B-QAT REPAIR & TEST EXECUTION (http://localhost:1235/v1, max_tokens=2048)
+========================================================================================
+Algorithm              | Reason/Total Tok   | Latency   | Unit Tests Passed  | Status
+----------------------------------------------------------------------------------------
+find_first_in_sorted   | 1116/1435          | 33.2s     | 6/7 (85.7%)        | 1 failed, 0 errors
+sieve                  | 455/682            | 16.2s     | 6/6 (100.0%)       | ALL PASSED
+bucketsort             | 284/482            | 12.1s     | 7/7 (100.0%)       | ALL PASSED
+flatten                | 421/560            | 13.8s     | 7/7 (100.0%)       | ALL PASSED
+gcd                    | 359/514            | 12.8s     | 6/6 (100.0%)       | ALL PASSED
+bitcount               | 786/997            | 22.7s     | 9/9 (100.0%)       | ALL PASSED
+----------------------------------------------------------------------------------------
+Live Gemma-4-12B-QAT (max_tokens=2048) Pass@1: 5/6 algorithms (83.3%), 41/42 unit tests (97.6%)
